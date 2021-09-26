@@ -29,12 +29,12 @@ def scrape():
     browser.visit(image_url)
     image_html = browser.html
 
-    browser.visit(image_url)
+    
     # Create BeautifulSoup object and parse with 'html.parser'
     image_soup = BeautifulSoup(image_html, 'html.parser')
     image = image_soup.find("img", class_="thumbimg")["src"]
-    featured_img_url = image_url + "/" + image
-    
+    img_url = "https://spaceimages-mars.com/" + image
+    featured_img_url = img_url
 
     mars_tables = pd.read_html(mars_url)
     df = mars_tables[1]
@@ -46,7 +46,7 @@ def scrape():
     hem_html = browser.html
 
     hem_soup = BeautifulSoup(hem_html,'html.parser')
-    hem_soup = BeautifulSoup(hem_html,'html.parser')
+    
     title = hem_soup.find_all('img',attrs={'class':'thumb'})
 
     hem_list = []
