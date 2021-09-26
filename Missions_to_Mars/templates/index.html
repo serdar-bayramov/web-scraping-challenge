@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+   
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Mission To Mars</title>
+  </head>
+
+  <body>
+        <div class="container">
+
+            <div class="jumbotron text-center">
+                <h1>Mission To Mars</h1>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h3>Latest Mars News</h3>
+                    <h5>{{ mar.news_title }}</h5> 
+                    <p>{{ mar.news_p }}</p>
+                </div>
+            </div>
+            <hr>
+            <br>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h3>Featured Mars Image </h3>
+                    <img src= "{{ mar.featured_img_url }}", class="img-fluid", alt="Featured Image">
+                </div>
+                <br>
+
+                    <div class="col-sm-12">
+                        <h3>Mars Facts </h3>
+                        <h5>{{ mar.html_table|safe }}</h5>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="row text-center">
+                <div class="col-sm-12">
+                    <h3>Mars Hemisphere</h3>
+                </div>
+            </div> 
+            
+            
+            <hr>
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="{{mar.hem_list[0]['imgs_url']}}" class="card-img-top" alt="Mars Hemisphere">
+                    <div class="card-body text-center">
+                    <h3 class="card-title">{{ mar.hem_list[0]['title']}}</h3>
+                    </div>
+                </div>
+                
+                <div class="col-sm-6">
+                    <img src="{{ mar.hem_list[1]['imgs_url']}}" class="card-img-top" alt="Mars Hemisphere">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">{{ mar.hem_list[1]['title']}}</h3>
+                        </div>
+                </div>  
+            </div>  
+
+            <div class="row">
+                    <div class="col-sm-6">
+                        <img src="{{ mar.hem_list[2]['imgs_url']}}" class="card-img-top" alt="Mars Hemisphere">
+                        <div class="card-body text-center">
+                        <h3 class="card-title">{{ mar.hem_list[2]['title']}}</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-6">
+                        <img src="{{ mar.hem_list[3]['imgs_url']}}" class="card-img-top" alt="Mars Hemisphere">
+                            <div class="card-body text-center">
+                                <h3 class="card-title">{{ mar.hem_list[3]['title']}}</h3>
+                            </div>
+                    </div>  
+                </div> 
